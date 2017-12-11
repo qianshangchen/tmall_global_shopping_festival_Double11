@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>What Does Trump Do at 2 pm?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <style>
+     rect.bordered {
+       stroke: #E6E6E6;
+       stroke-width:1px;
+     }
+     text.mono {
+       font-size: 9pt;
+       fill: #000;
+     }
+     text.axis-workweek {
+       fill: #aaa;
+     }
+     text.axis-worktime {
+       fill: #000;
+     }
+     .d3-tip {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 8px;
+      color: #fff;
+      z-index: 5070;
+    }
+    #days {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
+   </style>
+
+   <script src="vendor/d3/d3.v3.js"></script>
+   <script src="vendor/d3-tip/d3.tip.v0.6.js"></script>
+   <script src="vendor/chartsjs/Chart.bundle.min.js"></script>
+
+
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Data Viz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#page-top">Tweet</a>
+             </li>
+
+             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#retweeting">Retweeting</a>
+            </li>
+              
+
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#tweetcount">Retweeted</a>
+            </li>
+
+        
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="bg-primary">
+      <div class="container text-center">
+        <div id="heatmap"></div>
+        <h1>A Year in President Trump's Tweets</h1>
+        <p class="lead">As President, @realDonaldTrump has tweeted <u><b>2284</b></u> too many times in 2017. </p>
+      </div>
+    </header>
+
+        <section id="when">
+      <div class="container">
+        <h1> How often does Donald tweet? </h1>
+
+        <div class="row">
+          <div class="col">
+            <canvas id="month"></canvas>
+            <p> This year, @realDonaldTrump tweeted the most in the month of <b> October </b> </p>
+          </div>
+
+          <div class="col">
+            <canvas id="day"></canvas>
+            <p> I wonder what happened between May and June? </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+   <section id="retweeting">
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+            <h1>Retweeting</h1>
+          <p class="lead">Who was @realDonaldTrump retweeting this year?</p>
+          <br>
+          <br>
+          <p>@realDonaldTrump retweeted <b>284</b> tweets this year.</p>
+          <p>@realDonaldTrump retweeted @foxandfriends <b>46</b> times.</p>
+          <br>
+          <br>
+          <svg width="700" height="700" xmlns="http://www.w3.org/2000/svg" version="1.1"><g transform="translate(10,10)"><g><circle class="node node--root" transform="translate(340,340)" r="340" style="fill-opacity: 0; stroke: rgb(221, 221, 221); stroke-opacity: 1;"></circle><circle class="node node--leaf" transform="translate(509.2488008829438,521.7228792305768)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(390.5902235543712,122.83795093004187)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(126.68195463090703,137.31040138646873)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(40.193604482794456,394.54768477150367)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(625.0258095658749,304.8901816731131)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(347.4415123899764,137.50816652546655)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(568.7309225665226,486.67379148457485)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(533.9149389867152,211.18701729614318)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(423.89617273537027,136.6849437302024)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(261.10789983328067,94.9577035327041)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(119.96358658919402,511.10196388386635)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(79.88983659689251,189.52013826221494)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(264.2471905790201,524.5385292383253)" r="41.52992376767967" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(252.66163646958586,626.9942447138872)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(122.39588405346086,191.88122676026137)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(86.64115025811972,283.02097018761623)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(70.52198701397987,426.3468918354456)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(592.3420244795034,459.40583727253636)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(96.19941852372693,468.1663798112752)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(543.8538030746881,441.27658551068146)" r="31.393671501928853" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(364.1174307803598,98.33863046601189)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(139.75046249400174,326.1324370270535)" r="41.52992376767967" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(137.77470205234798,413.8460942935143)" r="41.52992376767967" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(96.95887058151453,157.74477769326455)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(107.74153872268442,238.71551149297252)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(406.23878533803804,257.4185581609086)" r="56.595746162638534" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(28.00467033996199,428.49551746987606)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(216.6670566664362,624.6670822250005)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(71.4378515166892,329.67994328901574)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(320.2364849507919,614.881349626232)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(513.9250690697177,557.488197295713)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(542.5606089951691,535.5557712184898)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(626.5692602185927,470.78660148746485)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(79.45689843258242,378.0937321312352)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(615.6957283606342,270.0480370037818)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(587.5087948095637,247.54198809593217)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(511.26704610552156,126.28232492780208)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(410.9506360564237,93.0641526637599)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(349.1906507389254,61.0922487874239)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(437.8420847128705,519.9065576263758)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(473.41711060855647,525.8599594250337)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(300.0660924800864,206.23146063471654)" r="56.595746162638534" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(533.6803662648557,495.187542913802)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(488.0497392325144,223.77253468397748)" r="27.187717038733958" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(548.6335485417424,318.6869759200975)" r="27.187717038733958" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(594.8054916293621,423.4203292164236)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(617.7680939209488,395.604068568137)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(616.9890921573686,359.54275111151424)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(594.4737506627561,331.36323979857684)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(590.1865865572812,295.54919668155753)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(561.9996530062106,273.0431477737079)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(536.9065820398346,247.13246947437727)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(380.8737000215419,565.3196687458106)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(511.89300846918854,182.62025274822463)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(489.0550558206256,154.70156045655403)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(459.8303322608648,133.56058145106448)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(210.3769029106265,160.04333882319025)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(402.9103589931452,528.8954395755881)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(300.63576690121715,122.76292143629286)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(328.8302382368729,90.86604705370584)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(294.22980509412594,80.67607714259776)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(253.63311791598966,136.86792238878488)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(226.2593869417288,104.26397075981143)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(194.1456194233481,120.68747209875826)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(158.0929037994101,119.57970109604861)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(390.3485185495017,170.3979485656899)" r="27.187717038733958" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(161.34359570024336,162.02698382935802)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(464.5123475565104,373.2822501173312)" r="68.42092077181032" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(67.9591682131034,223.5595949613317)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(53.319942830700825,256.52500927176027)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(44.944801282563844,291.6089438359402)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(29.236399464808926,324.0784922280405)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(40.08495771122716,358.47811787177477)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(347.4951903848694,509.16722596533657)" r="38.449238166139644" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(503.32694932917093,280.81362241529007)" r="27.187717038733958" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(44.91468675995185,460.3557874801987)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(61.270650944085844,492.50400509894575)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(79.31065556308994,523.7383402735785)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(103.60069020747369,550.4032925036056)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(123.7739116364732,580.3042389373147)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(158.39347521107553,590.429024286104)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(193.91816509080473,596.6757729927558)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(485.7674795750239,475.5882400309328)" r="31.393671501928853" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(184.40733513812066,488.16289476197255)" r="41.52992376767967" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(288.4039168389814,631.8434564488509)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(448.6486410080876,179.7880795137954)" r="27.187717038733958" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(355.70348623417243,608.3149746430568)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(391.7267444161992,606.4845838634596)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(419.4247389380297,583.379464086154)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(442.51835289964436,555.671875691512)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(478.0933787953303,561.6252774901699)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(284.95424800338867,373.2822501173312)" r="106.46111975395867" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(568.8665039433911,378.6213749621763)" r="31.393671501928853" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(575.9885095114585,522.005829243409)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(602.958158305612,498.0545556995033)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(151.908258362199,548.354319632373)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(629.0327273684516,434.80109343135206)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(651.995329660038,406.9848327830655)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(651.2163278964579,370.92351532644267)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(643.9587409515223,335.5914775676085)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(200.57893427617014,554.6285024138592)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(237.1523520531081,587.3483003290645)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(286.18574959850537,589.329711102564)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(569.6327140531957,216.21354738710028)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(556.1269292716112,182.76778176739126)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(534.1049987540845,154.20101721947267)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(332.36053424908437,572.7137751984098)" r="22.19867800535676" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(482.0423225457607,105.1413459223125)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(446.3245474792803,100.11481583135546)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(188.99120310062918,238.42855521677936)" r="54.375434077467915" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(384.4778432824123,68.56483219972989)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(414.8667006109658,469.416121784691)" r="35.09919177080542" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(314.59021759617843,50.90227887631579)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(278.62514567939894,48.156543551149014)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle><circle class="node node--leaf" transform="translate(245.50324041855367,62.43816994125541)" r="15.696835750964427" style="fill: rgb(105, 196, 247); fill-opacity: 1; stroke: rgb(221, 221, 221); stroke-opacity: 0;"></circle></g><g><text text-anchor="middle" transform="translate(340,340)" style="font-size: 11px; font-family: Arial, Helvetica;"></text><text text-anchor="middle" transform="translate(509.2488008829438,521.7228792305768)" style="font-size: 11px; font-family: Arial, Helvetica;">@ABC</text><text text-anchor="middle" transform="translate(390.5902235543712,122.83795093004187)" style="font-size: 11px; font-family: Arial, Helvetica;">@ABCNewsRadio</text><text text-anchor="middle" transform="translate(126.68195463090703,137.31040138646873)" style="font-size: 11px; font-family: Arial, Helvetica;">@AbeShinzo</text><text text-anchor="middle" transform="translate(40.193604482794456,394.54768477150367)" style="font-size: 11px; font-family: Arial, Helvetica;">@AlanDersh</text><text text-anchor="middle" transform="translate(625.0258095658749,304.8901816731131)" style="font-size: 11px; font-family: Arial, Helvetica;">@AmbJohnBolton</text><text text-anchor="middle" transform="translate(347.4415123899764,137.50816652546655)" style="font-size: 11px; font-family: Arial, Helvetica;">@AmericaFirstPol</text><text text-anchor="middle" transform="translate(568.7309225665226,486.67379148457485)" style="font-size: 11px; font-family: Arial, Helvetica;">@Bet22325450ste</text><text text-anchor="middle" transform="translate(533.9149389867152,211.18701729614318)" style="font-size: 11px; font-family: Arial, Helvetica;">@BrazoriaCounty</text><text text-anchor="middle" transform="translate(423.89617273537027,136.6849437302024)" style="font-size: 11px; font-family: Arial, Helvetica;">@CLewandowski_</text><text text-anchor="middle" transform="translate(261.10789983328067,94.9577035327041)" style="font-size: 11px; font-family: Arial, Helvetica;">@ChuckGrassley</text><text text-anchor="middle" transform="translate(119.96358658919402,511.10196388386635)" style="font-size: 11px; font-family: Arial, Helvetica;">@ColumbiaBugle</text><text text-anchor="middle" transform="translate(79.88983659689251,189.52013826221494)" style="font-size: 11px; font-family: Arial, Helvetica;">@Corrynmb</text><text text-anchor="middle" transform="translate(264.2471905790201,524.5385292383253)" style="font-size: 11px; font-family: Arial, Helvetica;">@DRUDGE_REPORT</text><text text-anchor="middle" transform="translate(252.66163646958586,626.9942447138872)" style="font-size: 11px; font-family: Arial, Helvetica;">@DailyCaller</text><text text-anchor="middle" transform="translate(122.39588405346086,191.88122676026137)" style="font-size: 11px; font-family: Arial, Helvetica;">@DanScavino</text><text text-anchor="middle" transform="translate(86.64115025811972,283.02097018761623)" style="font-size: 11px; font-family: Arial, Helvetica;">@DeptofDefense</text><text text-anchor="middle" transform="translate(70.52198701397987,426.3468918354456)" style="font-size: 11px; font-family: Arial, Helvetica;">@DiamondandSilk</text><text text-anchor="middle" transform="translate(592.3420244795034,459.40583727253636)" style="font-size: 11px; font-family: Arial, Helvetica;">@DineshDSouza</text><text text-anchor="middle" transform="translate(96.19941852372693,468.1663798112752)" style="font-size: 11px; font-family: Arial, Helvetica;">@DonaldJTrumpJr</text><text text-anchor="middle" transform="translate(543.8538030746881,441.27658551068146)" style="font-size: 11px; font-family: Arial, Helvetica;">@DonnaWR8</text><text text-anchor="middle" transform="translate(364.1174307803598,98.33863046601189)" style="font-size: 11px; font-family: Arial, Helvetica;">@EPAScottPruitt</text><text text-anchor="middle" transform="translate(139.75046249400174,326.1324370270535)" style="font-size: 11px; font-family: Arial, Helvetica;">@EricTrump</text><text text-anchor="middle" transform="translate(137.77470205234798,413.8460942935143)" style="font-size: 11px; font-family: Arial, Helvetica;">@FLOTUS</text><text text-anchor="middle" transform="translate(96.95887058151453,157.74477769326455)" style="font-size: 11px; font-family: Arial, Helvetica;">@FiIibuster</text><text text-anchor="middle" transform="translate(107.74153872268442,238.71551149297252)" style="font-size: 11px; font-family: Arial, Helvetica;">@FoxBusiness</text><text text-anchor="middle" transform="translate(406.23878533803804,257.4185581609086)" style="font-size: 11px; font-family: Arial, Helvetica;">@FoxNews</text><text text-anchor="middle" transform="translate(28.00467033996199,428.49551746987606)" style="font-size: 11px; font-family: Arial, Helvetica;">@Franklin_Graham</text><text text-anchor="middle" transform="translate(216.6670566664362,624.6670822250005)" style="font-size: 11px; font-family: Arial, Helvetica;">@Fuctupmind</text><text text-anchor="middle" transform="translate(71.4378515166892,329.67994328901574)" style="font-size: 11px; font-family: Arial, Helvetica;">@GOP</text><text text-anchor="middle" transform="translate(320.2364849507919,614.881349626232)" style="font-size: 11px; font-family: Arial, Helvetica;">@GOPChairwoman</text><text text-anchor="middle" transform="translate(513.9250690697177,557.488197295713)" style="font-size: 11px; font-family: Arial, Helvetica;">@GOPLeader</text><text text-anchor="middle" transform="translate(542.5606089951691,535.5557712184898)" style="font-size: 11px; font-family: Arial, Helvetica;">@GovAbbott</text><text text-anchor="middle" transform="translate(626.5692602185927,470.78660148746485)" style="font-size: 11px; font-family: Arial, Helvetica;">@GovChristie</text><text text-anchor="middle" transform="translate(79.45689843258242,378.0937321312352)" style="font-size: 11px; font-family: Arial, Helvetica;">@GregAbbott_TX</text><text text-anchor="middle" transform="translate(615.6957283606342,270.0480370037818)" style="font-size: 11px; font-family: Arial, Helvetica;">@Harlan</text><text text-anchor="middle" transform="translate(587.5087948095637,247.54198809593217)" style="font-size: 11px; font-family: Arial, Helvetica;">@HeyTammyBruce</text><text text-anchor="middle" transform="translate(511.26704610552156,126.28232492780208)" style="font-size: 11px; font-family: Arial, Helvetica;">@IamVicky4Trump</text><text text-anchor="middle" transform="translate(410.9506360564237,93.0641526637599)" style="font-size: 11px; font-family: Arial, Helvetica;">@IngrahamAngle</text><text text-anchor="middle" transform="translate(349.1906507389254,61.0922487874239)" style="font-size: 11px; font-family: Arial, Helvetica;">@Inspire_Us</text><text text-anchor="middle" transform="translate(437.8420847128705,519.9065576263758)" style="font-size: 11px; font-family: Arial, Helvetica;">@IsraelUSAforevr</text><text text-anchor="middle" transform="translate(473.41711060855647,525.8599594250337)" style="font-size: 11px; font-family: Arial, Helvetica;">@IsraeliPM</text><text text-anchor="middle" transform="translate(300.0660924800864,206.23146063471654)" style="font-size: 11px; font-family: Arial, Helvetica;">@IvankaTrump</text><text text-anchor="middle" transform="translate(533.6803662648557,495.187542913802)" style="font-size: 11px; font-family: Arial, Helvetica;">@JackPosobiec</text><text text-anchor="middle" transform="translate(488.0497392325144,223.77253468397748)" style="font-size: 11px; font-family: Arial, Helvetica;">@JacobAWohl</text><text text-anchor="middle" transform="translate(548.6335485417424,318.6869759200975)" style="font-size: 11px; font-family: Arial, Helvetica;">@JaydaBF</text><text text-anchor="middle" transform="translate(594.8054916293621,423.4203292164236)" style="font-size: 11px; font-family: Arial, Helvetica;">@JeffTutorials</text><text text-anchor="middle" transform="translate(617.7680939209488,395.604068568137)" style="font-size: 11px; font-family: Arial, Helvetica;">@Jenniffer2012</text><text text-anchor="middle" transform="translate(616.9890921573686,359.54275111151424)" style="font-size: 11px; font-family: Arial, Helvetica;">@JerryTravone</text><text text-anchor="middle" transform="translate(594.4737506627561,331.36323979857684)" style="font-size: 11px; font-family: Arial, Helvetica;">@Jim_Jordan</text><text text-anchor="middle" transform="translate(590.1865865572812,295.54919668155753)" style="font-size: 11px; font-family: Arial, Helvetica;">@KatiePavlich</text><text text-anchor="middle" transform="translate(561.9996530062106,273.0431477737079)" style="font-size: 11px; font-family: Arial, Helvetica;">@KellyannePolls</text><text text-anchor="middle" transform="translate(536.9065820398346,247.13246947437727)" style="font-size: 11px; font-family: Arial, Helvetica;">@LindseyGrahamSC</text><text text-anchor="middle" transform="translate(380.8737000215419,565.3196687458106)" style="font-size: 11px; font-family: Arial, Helvetica;">@LouDobbs</text><text text-anchor="middle" transform="translate(511.89300846918854,182.62025274822463)" style="font-size: 11px; font-family: Arial, Helvetica;">@MikeHolden42</text><text text-anchor="middle" transform="translate(489.0550558206256,154.70156045655403)" style="font-size: 11px; font-family: Arial, Helvetica;">@NWSHouston</text><text text-anchor="middle" transform="translate(459.8303322608648,133.56058145106448)" style="font-size: 11px; font-family: Arial, Helvetica;">@NYPDnews</text><text text-anchor="middle" transform="translate(210.3769029106265,160.04333882319025)" style="font-size: 11px; font-family: Arial, Helvetica;">@PChowka</text><text text-anchor="middle" transform="translate(402.9103589931452,528.8954395755881)" style="font-size: 11px; font-family: Arial, Helvetica;">@PacificCommand</text><text text-anchor="middle" transform="translate(300.63576690121715,122.76292143629286)" style="font-size: 11px; font-family: Arial, Helvetica;">@PressSec</text><text text-anchor="middle" transform="translate(328.8302382368729,90.86604705370584)" style="font-size: 11px; font-family: Arial, Helvetica;">@ProgressPolls</text><text text-anchor="middle" transform="translate(294.22980509412594,80.67607714259776)" style="font-size: 11px; font-family: Arial, Helvetica;">@RealEagleBites</text><text text-anchor="middle" transform="translate(253.63311791598966,136.86792238878488)" style="font-size: 11px; font-family: Arial, Helvetica;">@RealJamesWoods</text><text text-anchor="middle" transform="translate(226.2593869417288,104.26397075981143)" style="font-size: 11px; font-family: Arial, Helvetica;">@Realjmannarino</text><text text-anchor="middle" transform="translate(194.1456194233481,120.68747209875826)" style="font-size: 11px; font-family: Arial, Helvetica;">@Reince</text><text text-anchor="middle" transform="translate(158.0929037994101,119.57970109604861)" style="font-size: 11px; font-family: Arial, Helvetica;">@Reince45</text><text text-anchor="middle" transform="translate(390.3485185495017,170.3979485656899)" style="font-size: 11px; font-family: Arial, Helvetica;">@RightlyNews</text><text text-anchor="middle" transform="translate(161.34359570024336,162.02698382935802)" style="font-size: 11px; font-family: Arial, Helvetica;">@SLandinSoCal</text><text text-anchor="middle" transform="translate(464.5123475565104,373.2822501173312)" style="font-size: 11px; font-family: Arial, Helvetica;">@Scavino45</text><text text-anchor="middle" transform="translate(67.9591682131034,223.5595949613317)" style="font-size: 11px; font-family: Arial, Helvetica;">@SecShulkin</text><text text-anchor="middle" transform="translate(53.319942830700825,256.52500927176027)" style="font-size: 11px; font-family: Arial, Helvetica;">@SecretService</text><text text-anchor="middle" transform="translate(44.944801282563844,291.6089438359402)" style="font-size: 11px; font-family: Arial, Helvetica;">@SecretarySonny</text><text text-anchor="middle" transform="translate(29.236399464808926,324.0784922280405)" style="font-size: 11px; font-family: Arial, Helvetica;">@SheriffClarke</text><text text-anchor="middle" transform="translate(40.08495771122716,358.47811787177477)" style="font-size: 11px; font-family: Arial, Helvetica;">@TXMilitary</text><text text-anchor="middle" transform="translate(347.4951903848694,509.16722596533657)" style="font-size: 11px; font-family: Arial, Helvetica;">@Team_Trump45</text><text text-anchor="middle" transform="translate(503.32694932917093,280.81362241529007)" style="font-size: 11px; font-family: Arial, Helvetica;">@TheFive</text><text text-anchor="middle" transform="translate(44.91468675995185,460.3557874801987)" style="font-size: 11px; font-family: Arial, Helvetica;">@The_Trump_Train</text><text text-anchor="middle" transform="translate(61.270650944085844,492.50400509894575)" style="font-size: 11px; font-family: Arial, Helvetica;">@TravelGov</text><text text-anchor="middle" transform="translate(79.31065556308994,523.7383402735785)" style="font-size: 11px; font-family: Arial, Helvetica;">@TuckerCarlson</text><text text-anchor="middle" transform="translate(103.60069020747369,550.4032925036056)" style="font-size: 11px; font-family: Arial, Helvetica;">@TwitterData</text><text text-anchor="middle" transform="translate(123.7739116364732,580.3042389373147)" style="font-size: 11px; font-family: Arial, Helvetica;">@USArmy333</text><text text-anchor="middle" transform="translate(158.39347521107553,590.429024286104)" style="font-size: 11px; font-family: Arial, Helvetica;">@USCGSoutheast</text><text text-anchor="middle" transform="translate(193.91816509080473,596.6757729927558)" style="font-size: 11px; font-family: Arial, Helvetica;">@USHCC</text><text text-anchor="middle" transform="translate(485.7674795750239,475.5882400309328)" style="font-size: 11px; font-family: Arial, Helvetica;">@VP</text><text text-anchor="middle" transform="translate(184.40733513812066,488.16289476197255)" style="font-size: 11px; font-family: Arial, Helvetica;">@WhiteHouse</text><text text-anchor="middle" transform="translate(288.4039168389814,631.8434564488509)" style="font-size: 11px; font-family: Arial, Helvetica;">@axios</text><text text-anchor="middle" transform="translate(448.6486410080876,179.7880795137954)" style="font-size: 11px; font-family: Arial, Helvetica;">@billoreilly</text><text text-anchor="middle" transform="translate(355.70348623417243,608.3149746430568)" style="font-size: 11px; font-family: Arial, Helvetica;">@brunelldonald</text><text text-anchor="middle" transform="translate(391.7267444161992,606.4845838634596)" style="font-size: 11px; font-family: Arial, Helvetica;">@charliekirk11</text><text text-anchor="middle" transform="translate(419.4247389380297,583.379464086154)" style="font-size: 11px; font-family: Arial, Helvetica;">@dcexaminer</text><text text-anchor="middle" transform="translate(442.51835289964436,555.671875691512)" style="font-size: 11px; font-family: Arial, Helvetica;">@dmartosko</text><text text-anchor="middle" transform="translate(478.0933787953303,561.6252774901699)" style="font-size: 11px; font-family: Arial, Helvetica;">@ericbolling</text><text text-anchor="middle" transform="translate(284.95424800338867,373.2822501173312)" style="font-size: 11px; font-family: Arial, Helvetica;">@foxandfriends</text><text text-anchor="middle" transform="translate(568.8665039433911,378.6213749621763)" style="font-size: 11px; font-family: Arial, Helvetica;">@foxnation</text><text text-anchor="middle" transform="translate(575.9885095114585,522.005829243409)" style="font-size: 11px; font-family: Arial, Helvetica;">@glamourizes</text><text text-anchor="middle" transform="translate(602.958158305612,498.0545556995033)" style="font-size: 11px; font-family: Arial, Helvetica;">@greta</text><text text-anchor="middle" transform="translate(151.908258362199,548.354319632373)" style="font-size: 11px; font-family: Arial, Helvetica;">@hughhewitt</text><text text-anchor="middle" transform="translate(629.0327273684516,434.80109343135206)" style="font-size: 11px; font-family: Arial, Helvetica;">@jayMAGA45</text><text text-anchor="middle" transform="translate(651.995329660038,406.9848327830655)" style="font-size: 11px; font-family: Arial, Helvetica;">@jessebwatters</text><text text-anchor="middle" transform="translate(651.2163278964579,370.92351532644267)" style="font-size: 11px; font-family: Arial, Helvetica;">@joegooding</text><text text-anchor="middle" transform="translate(643.9587409515223,335.5914775676085)" style="font-size: 11px; font-family: Arial, Helvetica;">@marcorubio</text><text text-anchor="middle" transform="translate(200.57893427617014,554.6285024138592)" style="font-size: 11px; font-family: Arial, Helvetica;">@markets</text><text text-anchor="middle" transform="translate(237.1523520531081,587.3483003290645)" style="font-size: 11px; font-family: Arial, Helvetica;">@mike_pence</text><text text-anchor="middle" transform="translate(286.18574959850537,589.329711102564)" style="font-size: 11px; font-family: Arial, Helvetica;">@mitchellvii</text><text text-anchor="middle" transform="translate(569.6327140531957,216.21354738710028)" style="font-size: 11px; font-family: Arial, Helvetica;">@narendramodi</text><text text-anchor="middle" transform="translate(556.1269292716112,182.76778176739126)" style="font-size: 11px; font-family: Arial, Helvetica;">@netanyahu</text><text text-anchor="middle" transform="translate(534.1049987540845,154.20101721947267)" style="font-size: 11px; font-family: Arial, Helvetica;">@opinionsamerica</text><text text-anchor="middle" transform="translate(332.36053424908437,572.7137751984098)" style="font-size: 11px; font-family: Arial, Helvetica;">@paulsperry_</text><text text-anchor="middle" transform="translate(482.0423225457607,105.1413459223125)" style="font-size: 11px; font-family: Arial, Helvetica;">@paultdove</text><text text-anchor="middle" transform="translate(446.3245474792803,100.11481583135546)" style="font-size: 11px; font-family: Arial, Helvetica;">@piersmorgan</text><text text-anchor="middle" transform="translate(188.99120310062918,238.42855521677936)" style="font-size: 11px; font-family: Arial, Helvetica;">@realDonaldTrump</text><text text-anchor="middle" transform="translate(384.4778432824123,68.56483219972989)" style="font-size: 11px; font-family: Arial, Helvetica;">@ricardorossello</text><text text-anchor="middle" transform="translate(414.8667006109658,469.416121784691)" style="font-size: 11px; font-family: Arial, Helvetica;">@seanhannity</text><text text-anchor="middle" transform="translate(314.59021759617843,50.90227887631579)" style="font-size: 11px; font-family: Arial, Helvetica;">@statedeptspox</text><text text-anchor="middle" transform="translate(278.62514567939894,48.156543551149014)" style="font-size: 11px; font-family: Arial, Helvetica;">@townhallcom</text><text text-anchor="middle" transform="translate(245.50324041855367,62.43816994125541)" style="font-size: 11px; font-family: Arial, Helvetica;">@usairforce</text></g></g></svg>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+    
+    
+    
+    <section id="tweetcount" class="bg-light">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+              <h1>Retweets</h1>
+            <p class="lead">Because what's the point if people aren't talking?</p>
+                <br>
+                    <br>
+                        <br>
+
+          </div>
+        </div>
+
+
+  <div class="row">
+          <div class ="col-md-8">
+          <canvas id="retweets"></canvas>
+        </div>
+          <div class ="col-md-4">
+            <table class="table table-bordered table-hover table-condensed">
+                            <thead><tr><th title="Field #1">Retweeted</th>
+                            <th title="Field #2">Frequency</th>
+                            </tr></thead>
+                            <tbody><tr>
+                            <td>&gt;10k</td>
+                            <td align="right">2237</td>
+                            </tr>
+                            <tr>
+                            <td>10k+</td>
+                            <td align="right">22</td>
+                            </tr>
+                            <tr>
+                            <td>20k+</td>
+                            <td align="right">11</td>
+                            </tr>
+                            <tr>
+                            <td>30k+</td>
+                            <td align="right">6</td>
+                            </tr>
+                            <tr>
+                            <td>40k+</td>
+                            <td align="right">5</td>
+                            </tr>
+                            <tr>
+                            <td>50k+</td>
+                            <td align="right">1</td>
+                            </tr>
+                            <tr>
+                            <td>60k+</td>
+                            <td align="right">1</td>
+                            </tr>
+                            <tr>
+                            <td>70k+</td>
+                            <td align="right">1</td>
+                            </tr>
+                            <tr>
+                            <td>80k+</td>
+                            <td align="right">1</td>
+                            </tr>
+                            <tr>
+                            <td>220k+</td>
+                            <td align="right">1</td>
+                            </tr>
+                            </tbody></table>
+        </div>
+</div>
+
+      </div>
+
+      
+      
+      
+      
+  <section id="most">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+
+        <h1> Most retweeted tweet: 272,897 </h1>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col">
+          <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Why would Kim Jong-un insult me by calling me &quot;old,&quot; when I would NEVER call him &quot;short and fat?&quot; Oh well, I try so hard to be his friend - and maybe someday that will happen!</p>&mdash; Donald J. Trump (@realDonaldTrump) <a href="https://twitter.com/realDonaldTrump/status/929511061954297857?ref_src=twsrc%5Etfw">November 12, 2017</a></blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+
+        <div class="col">
+          <blockquote class="twitter-tweet" data-lang="en" data-conversation="none"><p lang="en" dir="ltr" >Well if it’s any consolation, that sounded like something an 8 year old might say.</p>&mdash; Ron Mayer (@korax23) <a href="https://twitter.com/korax23/status/929513534538399745?ref_src=twsrc%5Etfw">November 12, 2017</a></blockquote>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        <blockquote class="twitter-tweet" data-lang="en" data-conversation="none"><p lang="en" dir="ltr">Is this a joke? What is happening here? Did a 13 yr old girl tweet this?</p>&mdash; Kerry Souza (@bellaluna6) <a href="https://twitter.com/bellaluna6/status/929513959497101320?ref_src=twsrc%5Etfw">November 12, 2017</a></blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white"> sandywij.github.io</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <script src="heatmap.js"></script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
+
+    <!-- Charts.JS -->
+
+
+
+  </body>
+
+</html>
