@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<style>
-.axis .domain {
-  display: none;
-}
-</style>
-<svg width="960" height="500"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
 var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
@@ -77,4 +68,4 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("dy", "0.32em")
       .text(function(d) { return d; });
 });
-</script>
+
