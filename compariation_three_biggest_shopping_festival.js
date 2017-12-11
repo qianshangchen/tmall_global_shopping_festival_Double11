@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<style>
+.axis .domain {
+  display: none;
+}
+</style>
+<svg width="960" height="500"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
@@ -19,14 +27,14 @@ d3.csv("data.csv", function(d, i, columns) {
 }, function(error, data) {
   if (error) throw error;
   var keys = data.columns.slice(1);
-  x0.domain(data.map(function(d) { return d.State; }));
+  x0.domain(data.map(function(d) { return d.Festival; }));
   x1.domain(keys).rangeRound([0, x0.bandwidth()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); })]).nice();
   g.append("g")
     .selectAll("g")
     .data(data)
     .enter().append("g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; })
+      .attr("transform", function(d) { return "translate(" + x0(d.Festival) + ",0)"; })
     .selectAll("rect")
     .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
     .enter().append("rect")
@@ -49,7 +57,7 @@ d3.csv("data.csv", function(d, i, columns) {
       .attr("fill", "#000")
       .attr("font-weight", "bold")
       .attr("text-anchor", "start")
-      .text("Population");
+      .text("Million Dollars");
   var legend = g.append("g")
       .attr("font-family", "sans-serif")
       .attr("font-size", 10)
