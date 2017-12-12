@@ -1,6 +1,8 @@
-dataset1.csv("dataset1.csv", function(data) {
-        dataset=data
-        });
+var dataset = []
+d3.csv("dataset1.csv", function(data) {
+   dataset = data.map(function(d) { return [ +d["max_i"], +d["min_i"] ]; });
+   console.log(dataset)
+});
 var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
