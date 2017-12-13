@@ -78,4 +78,4 @@ $('#sliders input').on('input change', function () {
 });
 
 showValues();
-}
+
