@@ -49,7 +49,7 @@ Highcharts.chart('container2', {
             [Date.UTC(2015), 30],
         ]
     }, {
-        name: 'Growth rate of China/' 100 Key large-scale retail enterprises',
+        name: 'Growth rate of China\' 100 Key large-scale retail enterprises',
         data: [
             [Date.UTC(2011),22.60],
             [Date.UTC(2012), 10.80],
