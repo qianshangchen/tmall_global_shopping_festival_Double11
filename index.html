@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>11.11 Global shopping festival</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+   <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--highchart spending-->
+   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+   <meta charset="utf-8">
+<!--highchart online offline sale-->
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/series-label.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+</head>
+<style>
+body,h1{font-family: 'Archivo Black', sans-serif}
+body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,button {font-family: "Archivo Black", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.w3-theme {color:#fff !important;background-color:#6d5b96 !important}
+.w3-theme-light {color:#000 !important;background-color:#a8729b !important}
+.w3-theme-dark {color:#fff !important;background-color:#844980 !important}
+.w3-theme-1 {color:#000 !important;background-color:#868fc5 !important}
+.w3-theme-2 {color:#000 !important;background-color:#a189a9 !important}
+.w3-theme-3 {color:#000 !important;background-color:#a86482 !important}
+.w3-theme-4 {color:#fff !important;background-color:#d47896 !important}
+.w3-theme-5 {color:#fff !important;background-color:#efa5c5 !important}
+
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#header" class="w3-bar-item w3-button w3-padding-large w3-white">HEADER</a>
+    <a href="#introduction" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">INTRODUCTION</a>
+    <a href="#spending" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">SPENDING</a>
+    <a href="#comparison" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">COMPARISON</a>
+    <a href="#onlineoffline" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">OFFLINE VS ONLINE</a>
+    <a href="#concern" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CONCERN</a>
+    <a href="#future" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FUTURE</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HEADER</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">INTRODUCTION</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">SPENDING</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">COMPARISON</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">CONCERN</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">CONCERN</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">OFFLINE VS ONLINE</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">FUTURE</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header id="header", class="w3-container w3-theme w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">11.11 GLOBAL SHOPPING FESTIVAL</h1>
+  <p class="w3-xlarge">The biggest online shopping event operated by Alibaba Group</p>
+  <button class="w3-button w3-theme-1 w3-padding-large w3-large w3-margin-top" style="width:25%" src="Data_Final_Motion.html">THE HISTORY</button>
+</header>
+
+<!-- introduction -->
+<div id="introduction", class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird ">
+      <h1>INTRODUCTION</h1>
+      <h5 class="w3-padding-32">The 11.11 shopping festival began in 2009 with participation from just 27 merchants as an event for merchants and consumers to raise awareness of the value in online shopping. Last year, nearly 100,000 merchants participated in the global shopping event, with consumers spending RMB 120.7 billion (USD 17.79 billion) during the 24-hour period. For additional history and facts from last year’s festival, as well as the latest news and updates on the 2016 11.11 Global Shopping Festival, please visit <a href="http://www.alizila.com">Alizila website</a></h5>
+
+    </div>
+
+    <div class="w3-third w3-center w3-cell-right" style="padding:110px 20px 20px 30px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Tmall-logo_2.png/1200px-Tmall-logo_2.png" alt="tmall logo" style="width:88%" class="w3-hover-grayscale">
+    </div>
+  </div>
+</div>
+
+<!-- spending -->
+<div id="spending", class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">  
+
+      <h1 style="padding-top: 30px">REAL TIME SPENDING</h1>
+      <h5 class="w3-padding-32">During this year, 11.11 Global Shopping Festival increased dramatically, it reached 1,000 million RMB (approximately 154 million dollars) in 11 second this years. The chart shows the real time data of spending of 11.11 among, 2015, 2016 and 2017. </h5>
+  <!-- highchart--> 
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <script src="spending.js">
+  </script>
+  
+    
+    </div>
+  </div>
+</div>
+
+<!-- Comparison -->
+<!-- D3.js--> 
+<div id="comparison", class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <script src="test1.js">
+    </script>
+    </div>
+
+      <h1  style="padding-top: 30px">COMPARION AMONG WORLD-WIDE BIGGEST SHOPPING FESTIVAL</h1>
+      <h5 class="w3-padding-32">As the data show above, event the Alibaba Global Shopping festival only have 8 years history, but it already overcome all the other online shopping event in 2012. And it increased significantly for the past few year, more than 30% grow every year</h5>
+   
+  </div>
+</div>
+
+
+
+<!-- onlineoffline-->
+<div id="onlineoffline", class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">  
+
+      <h1 style="padding-top: 30px">OFFLINE VS ONLINE</h1>
+      <h5 class="w3-padding-32">Over the past five years, the sales volume of Chinese retail market has continued to slow
+down, and the growth rate of major physical retailers has declined significantly. According
+to the data from China General Chamber of Commerce (CGCC), the sales growth rate of
+China's 100 key large-scale retailing enterprises got close to zero in 2014, and the sales
+volume even showed a negative growth in 2015. By contrast, online retail has become a
+major driver and exerted an increasing impact on the growth of Chinese retail market.
+Deloitte Research estimated that the online retail market contributed 34.7 percent to the
+growth of Chinese retail market in 2015, nearly doubling the growth contribution of 19.65
+percent in 2012. Although the overall growth rate gradually slowed down, the online retail
+market will still grow at a much higher rate than that of the overall retail market in the next
+few years. And the online retail market will have more significant impact on the overall retail
+sales growth. </h5>
+    
+  <!-- highchart--> 
+  <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+  <script src="online_offline.js">
+  </script>
+
+    </div>
+  </div>
+</div>
+
+<!-- Concern -->`
+<div id="concern", class="w3-container w3-theme w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">CONCERN</h1>
+    <h5>As the data showed, the online shopping sales ascended remarkably across the world. But this also cause another problem, many offline shop closed due to the competition, such as Bookshop, handcraft shop, etc. So, public start to concern about which will cause many people lose their jobs, and most of the offline shop at risk. But in my opinion, the future belong to neither online or offline store, it belongs to the hybrid store which can provide great and unique shopping experience. The video of Hema uncover the first light of future. </h5>
+</div>
+
+
+
+
+<!-- Future -->
+<div id="future", class="w3-container w3-center w3-opacity w3-padding-64">
+  <div class="w3-content">
+      <h1  style="padding-top: 30px">THE FUTURE OF RETAIL STORES</h1>
+      <h5 class="w3-padding-32">In China, New Retail is changing EVERYTHING. Watch how Alibaba is transforming the very core of online and offline commerce with the sector's most important trend in decades.</h5>
+  </div>
+</div>
+<!--video-->
+<div id="future", class="w3-row-padding w3-padding-64 w3-container">
+<div class="w3-content">
+<video width="100%" height="100%" controls>
+  <source src="https://video.fewr1-2.fna.fbcdn.net/v/t42.1790-2/23305760_157260731555111_6157537931868241920_n.mp4?efg=eyJybHIiOjQzMCwicmxhIjoxNDczLCJ2ZW5jb2RlX3RhZyI6ImxlZ2FjeV9zZCJ9&rl=430&vabr=239&oh=df94767627922942c437238bf80dc557&oe=5A335C55">
+  Your browser does not support the video tag.
+</video>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
