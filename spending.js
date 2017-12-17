@@ -1,4 +1,4 @@
-Highcharts.chart('container', {
+Highcharts.chart('container3', {
     title: {
         text: 'Billions of RMB spending'
     },
