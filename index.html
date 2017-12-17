@@ -35,6 +35,9 @@ body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-theme-3 {color:#000 !important;background-color:#a86482 !important}
 .w3-theme-4 {color:#fff !important;background-color:#d47896 !important}
 .w3-theme-5 {color:#fff !important;background-color:#efa5c5 !important}
+   .axis .domain {
+  display: none;
+}
 
 </style>
 <body>
@@ -105,7 +108,9 @@ body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </div>
 
 <!-- Comparison -->
-<!-- D3.js--> 
+<!-- D3.js-->
+   <svg width="960" height="500"></svg>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
 <div id="comparison", class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <script src="test1.js">
