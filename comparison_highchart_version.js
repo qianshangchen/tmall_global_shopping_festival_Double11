@@ -89,11 +89,3 @@ var chart = Highcharts.chart('container3', {
         }]
     }
 });
-
-$('#small').click(function () {
-    chart.setSize(400, 300);
-});
-
-$('#large').click(function () {
-    chart.setSize(960, 500);
-});
