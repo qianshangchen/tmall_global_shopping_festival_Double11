@@ -1,6 +1,3 @@
-Highcharts.setOptions({
-    colors: ['6d5b96', '868fc5', 'efa5c5']
-});
 Highcharts.chart('container', {
     title: {
         text: 'Billions of RMB spending'
