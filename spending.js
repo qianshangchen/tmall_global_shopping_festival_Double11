@@ -1,12 +1,16 @@
-Highcharts.chart('container', {
-    title: {
-        text: 'Billions of RMB spending'
-    },
+Highcharts.setOptions({
+    colors: ['#6d5b96', '#868fc5', '#efa5c5']
+});
 
+Highcharts.chart('container', {
+
+    title: {
+        text: 'Billions of RMB spending6'
+    },
     credits: {
         enabled: false
     },
-    
+
     xAxis: {
         categories: ['11s', '28s', '52s', '1m12s', '3m01s', '3m47s', '5m45s', '5m57s', '6m58s','12m28s', '14m16s', '16m10s', '30m49s', '40m12s', '1h00m49s','1h01m57s', '2h30m20s','4h26m31s', '6h54m52s', '7h18m01s', '9h00m04s', '9h52m22s', '10h54m00s', '11h50m00s', '12h00m00s','12h29m26s', '13h09m00s', '15h19m13s', '16h40m00s', '17h00m28s', '18h55m36s', '22h12m03s', '24h00m00s']
     },
