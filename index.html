@@ -21,6 +21,13 @@
 <!--highchart comparison-->
    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
    <script src="https://code.highcharts.com/highcharts.js"></script>
+<!--highchart maps-->
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+   <script src="https://code.highcharts.com/modules/tilemap.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="
    
 
 </head>
@@ -37,6 +44,12 @@ body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-theme-3 {color:#000 !important;background-color:#a86482 !important}
 .w3-theme-4 {color:#fff !important;background-color:#d47896 !important}
 .w3-theme-5 {color:#fff !important;background-color:#efa5c5 !important}
+
+#container4 {
+	min-width: 400px;
+	max-width: 800px;
+	margin: 0 auto;
+}
 
 </style>
 <body>
@@ -72,7 +85,9 @@ body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header id="header", class="w3-container w3-theme w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">11.11 GLOBAL SHOPPING FESTIVAL</h1>
   <p class="w3-xlarge">The biggest online shopping event operated by Alibaba Group</p>
-  <button class="w3-button w3-theme-1 w3-padding-large w3-large w3-margin-top" style="width:25%" src="Data_Final_Motion.html">THE HISTORY</button>
+  <div id="container4"></div>
+  <script src="map.js">
+  </script>                    
 </header>
 
 <!-- introduction -->
